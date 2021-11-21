@@ -10,3 +10,6 @@ class CsvSource(TransformTable):
 
     def __read_table(self):
         return pd.read_csv(self.path)
+
+    def transform(self):
+        return self.df

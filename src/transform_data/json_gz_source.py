@@ -23,3 +23,6 @@ class JsonGzSource(TransformTable):
                 if (head is not None) and (count > head):
                     break
         return pd.DataFrame.from_dict(data)
+
+    def transform(self):
+        return self.df
