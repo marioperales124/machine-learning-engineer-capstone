@@ -1,6 +1,8 @@
 class InitConstants:
 
     def __init__(self):
+        self.s3_bucket = ''
+
         self.books_path = ''
         self.interactions_path = ''
         self.users_path = ''
