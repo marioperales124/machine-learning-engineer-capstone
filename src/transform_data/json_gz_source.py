@@ -9,7 +9,12 @@ class JsonGzSource(TransformTable):
     def __init__(self, path, head=None):
         super().__init__(path)
         self.df = self.__read_table(head)
-
+        
+    def __read_table(self, head):
+        return (pd.read_json(self.path, compression='gzip', nrows=head, lines=True) if head is not None 
+                    else pd.read_json(self.path, compression='gzip', lines=True))
+    
+    '''
     def __read_table(self, head=None):
         count = 0
         data = []
@@ -23,6 +28,6 @@ class JsonGzSource(TransformTable):
                 if (head is not None) and (count > head):
                     break
         return pd.DataFrame.from_dict(data)
-
+    '''
     def transform(self):
         return self.df

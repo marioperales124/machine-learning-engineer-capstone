@@ -1,12 +1,11 @@
 from config import InitConstants
-from src.transform_data.csv_source import CsvSource
+from src.transform_data.json_gz_source import JsonGzSource
 
 
-class Books(InitConstants, CsvSource):
+class Books(JsonGzSource):
 
-    def __init__(self):
-        InitConstants.__init__(self)
-        CsvSource(self.books_path).__init__(self)
+    def __init__(self, head=None):
+        super().__init__(InitConstants().books_path, head)
 
     def transform(self):
         selected_vars_book = ['book_id', 'is_ebook', 'average_rating', 'num_pages',
