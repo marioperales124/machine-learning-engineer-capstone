@@ -1,4 +1,6 @@
-
+PATH_DATA = '/data/'
+PATH_BOOKS = PATH_DATA + 'books_info.csv'
+PATH_INTERACTIONS = PATH_DATA + 'ratings.csv'
 RATING_MAP = {"This user doesn't have any rating": 0,
               "did not like it": 1,
               "it was ok": 2,
