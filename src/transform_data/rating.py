@@ -5,6 +5,9 @@ from config import SURPRISE_DATASET_COLS
 
 
 class Rating:
+    """
+    Here we build the Dataset to be ready to the surprise model
+    """
     def __init__(self, df, rating_scale=(1, 5)):
         """
 

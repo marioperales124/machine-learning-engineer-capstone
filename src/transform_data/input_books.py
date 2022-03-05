@@ -4,7 +4,7 @@ from config import PATH_BOOKS, BOOKS_LIST_VALUES
 
 class BooksReader:
     """
-    Class in charge of reading books data
+    Class in charge of building books dataset
     """
 
     def __init__(self):

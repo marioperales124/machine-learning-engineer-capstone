@@ -13,6 +13,7 @@ As I mentioned previously, we are going to use a Goodreads database from this Ka
 <a href='https://www.kaggle.com/bahramjannesarr/goodreads-book-datasets-10m'>link</a>
 
 The way I read in the project is based on this csvs. If it has changed contact me. <br>
+Even so, if only the numbers have changed, you only have to change them in config.py
 
 Books data:
 

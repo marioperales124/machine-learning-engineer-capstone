@@ -4,7 +4,7 @@ from config import PATH_INTERACTIONS, INTERACTIONS_LIST_VALUES, RATING_MAP, SURP
 
 class InteractionsReader:
     """
-    Class in charge of reading interactions data. (User-item ratings)
+    Class in charge of building interactions data. (User-item ratings)
     """
     def __init__(self, col_rating='Rating'):
         self.df = self.read_data(PATH_INTERACTIONS, INTERACTIONS_LIST_VALUES)
