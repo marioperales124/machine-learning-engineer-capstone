@@ -1,4 +1,4 @@
-PATH_DATA = '/data/'
+PATH_DATA = '../data/'
 PATH_BOOKS = PATH_DATA + 'book{0}-{1}k.csv'
 PATH_INTERACTIONS = PATH_DATA + 'user_rating_{0}_to_{1}.csv'
 BOOKS_LIST_VALUES = [1] + list(range(100, 2000, 100)) + list(range(2000, 5000, 1000))

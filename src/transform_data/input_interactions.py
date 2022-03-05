@@ -1,16 +1,21 @@
 from pandas import DataFrame, read_csv
-from config import PATH_INTERACTIONS, INTERACTIONS_LIST_VALUES
+from config import PATH_INTERACTIONS, INTERACTIONS_LIST_VALUES, RATING_MAP, SURPRISE_DATASET_COLS
 
 
 class InteractionsReader:
 
-    def __init__(self):
-        self.books = self.read_data(PATH_INTERACTIONS, INTERACTIONS_LIST_VALUES)
+    def __init__(self, col_rating='Rating'):
+        self.df = self.read_data(PATH_INTERACTIONS, INTERACTIONS_LIST_VALUES)
+        self.df[col_rating] = self.df[col_rating].map(RATING_MAP)
+        self.df.columns = SURPRISE_DATASET_COLS
 
     def read_data(self, path: str, list_values: list) -> DataFrame:
         df = DataFrame()
         for ind, val in enumerate(list_values):
-            if ind != len(list_values):
+            if (ind + 1) != len(list_values):
                 path_read = path.format(val, list_values[ind + 1])
                 df = df.append(read_csv(path_read))
         return df
+
+    def get_data(self):
+        return self.df
