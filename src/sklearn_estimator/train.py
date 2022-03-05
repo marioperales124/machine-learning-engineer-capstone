@@ -41,7 +41,7 @@ if __name__ == '__main__':
     parser.add_argument('--epochs', type=int, default=15)
     parser.add_argument('--n_factors', type=int, default=3)
     parser.add_argument('--alpha', type=int, default=0.2)
-    parser.add_argument('--model-dir', type=str, default='../model')
+    parser.add_argument('--model-dir', type=str, default=os.environ['SM_MODEL_DIR'])
     args = parser.parse_args()
     # Call args
     alpha = args.alpha
