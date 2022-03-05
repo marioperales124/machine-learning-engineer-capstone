@@ -6,10 +6,19 @@ from config import SURPRISE_DATASET_COLS
 
 class Rating:
     def __init__(self, df, rating_scale=(1, 5)):
+        """
+
+        :param df: input dataframe
+        :param rating_scale: Rating scale in dataset
+        """
         self.df = df
         self.rating_scale = rating_scale
 
     def get_surprise_dataset(self) -> Dataset:
+        """
+
+        :return: Surprise Dataset to use surprise models.
+        """
         try:
             self.df.columns = SURPRISE_DATASET_COLS
         except:
